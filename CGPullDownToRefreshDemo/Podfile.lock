@@ -1,0 +1,14 @@
+PODS:
+  - CGPullDownToRefresh (0.0.1)
+
+DEPENDENCIES:
+  - CGPullDownToRefresh (from `..`)
+
+EXTERNAL SOURCES:
+  CGPullDownToRefresh:
+    :path: ..
+
+SPEC CHECKSUMS:
+  CGPullDownToRefresh: 2f169850eb49753b522ddd7703b4fabc7f7cdc98
+
+COCOAPODS: 0.25.0
