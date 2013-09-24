@@ -6,6 +6,8 @@
 //
 //
 
+#import <CGPullDownToRefresh/CGPullDownToRefresh.h>
+
 #import "MasterViewController.h"
 
 #import "DetailViewController.h"
@@ -30,6 +32,10 @@
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+    
+    CGPullDownToRefresh *pullDownToRefresh = [[CGPullDownToRefresh alloc] init];
+    [pullDownToRefresh.indicatorRefreshing startAnimating];
+    self.tableView.tableHeaderView = pullDownToRefresh;
 }
 
 - (void)didReceiveMemoryWarning

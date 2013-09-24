@@ -32,10 +32,11 @@ Pod::Spec.new do |s|
   s.source       = { :git => "git@github.com:craquee/CGPullDownToRefresh.git", :tag => "0.0.1" }
 
 
-  s.source_files  = 'Classes', 'Classes/**/*.{h,m}'
+  s.source_files  = 'CGPullDownToRefresh/**/*.{h,m}'
+  s.exclude_files = 'CGPullDownToRefresh/**/*Tests.{h,m}'
 
-  s.resource  = 'Classes/**/*.xib'
-  s.resources = "Resources/*.png"
+  s.resource  = 'CGPullDownToRefresh/**/*.xib'
+  # s.resources = "Resources/*.png"
 
   # s.framework  = 'SomeFramework'
   # s.frameworks = 'SomeFramework', 'AnotherFramework'
