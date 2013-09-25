@@ -35,8 +35,7 @@ Pod::Spec.new do |s|
   s.source_files  = 'CGPullDownToRefresh/**/*.{h,m}'
   s.exclude_files = 'CGPullDownToRefresh/**/*Tests.{h,m}'
 
-  s.resource  = 'CGPullDownToRefresh/**/*.xib'
-  # s.resources = "Resources/*.png"
+  s.resources = 'CGPullDownToRefresh/**/*.{xib,png}'
 
   # s.framework  = 'SomeFramework'
   # s.frameworks = 'SomeFramework', 'AnotherFramework'

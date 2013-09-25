@@ -6,7 +6,7 @@
 //
 //
 
-#import <CGPullDownToRefresh/CGPullDownToRefresh.h>
+#import <CGPullDownToRefresh/UITableView+PullDownToRefresh.h>
 
 #import "MasterViewController.h"
 
@@ -32,10 +32,11 @@
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
-    
-    CGPullDownToRefresh *pullDownToRefresh = [[CGPullDownToRefresh alloc] init];
-    [pullDownToRefresh.indicatorRefreshing startAnimating];
-    self.tableView.tableHeaderView = pullDownToRefresh;
+
+    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CGPullDownToRefreshView" owner:self options:nil];
+    CGPullDownToRefreshView *view = [nib objectAtIndex:0];
+    self.tableView.tableHeaderView = view;
+    [self.tableView animateTableHeaderViewWithDuration:0.f hidden:YES animated:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -113,6 +114,26 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSDate *object = _objects[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
+    }
+}
+
+#pragma mark - ScrollView Delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self.tableView pullDownToRefreshDidEndScroll:scrollView];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    BOOL isUpdating = [self.tableView pullDownToRefreshDidEndDragging:scrollView];
+    if (isUpdating) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            sleep(2);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView pullDownToRefreshDidEndUpdate];
+            });
+        });
     }
 }
 
