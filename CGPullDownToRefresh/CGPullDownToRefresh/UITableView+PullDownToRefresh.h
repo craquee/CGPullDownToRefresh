@@ -18,9 +18,9 @@ typedef NS_ENUM(NSUInteger, CGPullDownToRefreshStatus) {
 
 @interface UITableView (PullDownToRefresh)
 
-- (void)animateTableHeaderViewWithDuration:(CGFloat)duration hidden:(BOOL)hidden animated:(BOOL)animated;
-- (void)pullDownToRefreshDidEndScroll:(UIScrollView *)scrollView;
-- (BOOL)pullDownToRefreshDidEndDragging:(UIScrollView *)scrollView;
-- (void)pullDownToRefreshDidEndUpdate;
+- (void)animateTableHeaderViewWithDuration:(CGFloat)duration topMargin:(CGFloat)topMargin hidden:(BOOL)hidden animated:(BOOL)animated;
+- (void)pullDownToRefreshDidEndScroll:(UIScrollView *)scrollView topMargin:(CGFloat)topMargin;
+- (BOOL)pullDownToRefreshDidEndDragging:(UIScrollView *)scrollView topMargin:(CGFloat)topMargin;
+- (void)pullDownToRefreshDidEndUpdate:(CGFloat)topMargin animated:(BOOL)animated;
 
 @end

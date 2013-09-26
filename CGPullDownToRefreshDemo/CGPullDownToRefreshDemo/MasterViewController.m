@@ -14,6 +14,7 @@
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
+    CGFloat _topMargin;
 }
 @end
 
@@ -24,6 +25,13 @@
     [super awakeFromNib];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.tableView pullDownToRefreshDidEndUpdate:_topMargin animated:NO];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -32,11 +40,15 @@
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
-
+    
+    _topMargin = self.navigationController.navigationBar.frame.size.height +
+    [[UIApplication sharedApplication] statusBarFrame].size.height;
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CGPullDownToRefreshView" owner:self options:nil];
     CGPullDownToRefreshView *view = [nib objectAtIndex:0];
+    CGRect frame = view.frame;
+    frame.size.height = _topMargin;
+    view.frame = frame;
     self.tableView.tableHeaderView = view;
-    [self.tableView animateTableHeaderViewWithDuration:0.f hidden:YES animated:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -121,17 +133,17 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    [self.tableView pullDownToRefreshDidEndScroll:scrollView];
+    [self.tableView pullDownToRefreshDidEndScroll:scrollView topMargin:_topMargin];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    BOOL isUpdating = [self.tableView pullDownToRefreshDidEndDragging:scrollView];
+    BOOL isUpdating = [self.tableView pullDownToRefreshDidEndDragging:scrollView topMargin:_topMargin];
     if (isUpdating) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             sleep(2);
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.tableView pullDownToRefreshDidEndUpdate];
+                [self.tableView pullDownToRefreshDidEndUpdate:_topMargin animated:YES];
             });
         });
     }
