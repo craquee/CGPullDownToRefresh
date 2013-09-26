@@ -134,8 +134,7 @@ static CGPullDownToRefreshStatus kStatus;
     } else {
         [self setStatus:kCGPullDownToRefreshStatusHidden];
     }
-    
-    NSLog(@"t:%f, y:%f", threshold, scrollView.contentOffset.y);
+//    NSLog(@"t:%f, y:%f", threshold, scrollView.contentOffset.y);
 }
 
 - (BOOL)pullDownToRefreshDidEndDragging:(UIScrollView *)scrollView
