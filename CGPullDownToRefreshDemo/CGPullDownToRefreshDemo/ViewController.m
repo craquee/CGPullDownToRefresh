@@ -1,54 +1,54 @@
 //
-//  MasterViewController.m
+//  ViewController.m
 //  CGPullDownToRefreshDemo
 //
-//  Created by Tomoya Igarashi on 9/24/13.
+//  Created by Tomoya Igarashi on 9/27/13.
 //
 //
 
+#import "ViewController.h"
 #import <CGPullDownToRefresh/UITableView+PullDownToRefresh.h>
-
-#import "MasterViewController.h"
-
 #import "DetailViewController.h"
 
-@interface MasterViewController () {
+@interface ViewController () {
     NSMutableArray *_objects;
-    CGFloat _topMargin;
+    CGPullDownToRefreshView *_refreshView;
 }
 @end
 
-@implementation MasterViewController
+@implementation ViewController
 
-- (void)awakeFromNib
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    [super awakeFromNib];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view.
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    self.navigationItem.rightBarButtonItem = addButton;
+    
+    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CGPullDownToRefreshView" owner:self options:nil];
+    _refreshView = [nib objectAtIndex:0];
+    self.tableView.tableHeaderView = _refreshView;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    [self.tableView pullDownToRefreshDidEndUpdate:_topMargin animated:NO];
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
     
-    _topMargin = self.navigationController.navigationBar.frame.size.height +
-    [[UIApplication sharedApplication] statusBarFrame].size.height;
-    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CGPullDownToRefreshView" owner:self options:nil];
-    CGPullDownToRefreshView *view = [nib objectAtIndex:0];
-    CGRect frame = view.frame;
-    frame.size.height = _topMargin;
-    view.frame = frame;
-    self.tableView.tableHeaderView = view;
+    [self.tableView pullDownToRefreshDidEndUpdateWithAnimated:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,8 +81,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = nil;
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 6.f) {
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
+    } else {
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    }
+    
     NSDate *object = _objects[indexPath.row];
     cell.textLabel.text = [object description];
     return cell;
@@ -104,22 +113,6 @@
     }
 }
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
@@ -133,17 +126,17 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    [self.tableView pullDownToRefreshDidEndScroll:scrollView topMargin:_topMargin];
+    [self.tableView pullDownToRefreshDidEndScroll:scrollView];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    BOOL isUpdating = [self.tableView pullDownToRefreshDidEndDragging:scrollView topMargin:_topMargin];
+    BOOL isUpdating = [self.tableView pullDownToRefreshDidEndDragging:scrollView];
     if (isUpdating) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             sleep(2);
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.tableView pullDownToRefreshDidEndUpdate:_topMargin animated:YES];
+                [self.tableView pullDownToRefreshDidEndUpdateWithAnimated:YES];
             });
         });
     }

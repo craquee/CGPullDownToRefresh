@@ -15,12 +15,12 @@ static CGPullDownToRefreshStatus kStatus;
 
 @implementation UITableView (PullDownToRefresh)
 
-- (void)animateTableHeaderViewWithDuration:(CGFloat)duration topMargin:(CGFloat)topMargin hidden:(BOOL)hidden animated:(BOOL)animated
+- (void)animateTableHeaderViewWithDuration:(CGFloat)duration hidden:(BOOL)hidden animated:(BOOL)animated
 {
-    CGFloat topOffset = [[[UIDevice currentDevice] systemVersion] floatValue] >= 7.f ? topMargin : 0.f;
+    CGFloat topOffset = 0.f;
     
     if (hidden) {
-        topOffset = [[[UIDevice currentDevice] systemVersion] floatValue] >= 7.f ? 0.f : -self.tableHeaderView.frame.size.height;
+        topOffset = -self.tableHeaderView.frame.size.height;
     }
     
     __block UITableView *blockself = self;
@@ -107,19 +107,17 @@ static CGPullDownToRefreshStatus kStatus;
     }
 }
 
-- (void)pullDownToRefreshDidEndScroll:(UIScrollView *)scrollView topMargin:(CGFloat)topMargin
+- (void)pullDownToRefreshDidEndScroll:(UIScrollView *)scrollView
 {
     if (kStatus == kCGPullDownToRefreshStatusUpdating) {
         return;
     }
     
-    CGFloat margin = [[[UIDevice currentDevice] systemVersion] floatValue] >= 7.f ? -topMargin + PULLDOWN_MARGIN : PULLDOWN_MARGIN;
-    
     CGFloat threshold = self.tableHeaderView.frame.size.height;
     
-    if (scrollView.contentOffset.y < margin) {
+    if (scrollView.contentOffset.y < PULLDOWN_MARGIN) {
         [self setStatus:kCGPullDownToRefreshStatusOveredThreshold];
-    } else if (scrollView.contentOffset.y >= margin &&
+    } else if (scrollView.contentOffset.y >= PULLDOWN_MARGIN &&
                scrollView.contentOffset.y < threshold) {
         [self setStatus:kCGPullDownToRefreshStatusPullingDown];
     } else {
@@ -128,19 +126,19 @@ static CGPullDownToRefreshStatus kStatus;
 //    NSLog(@"t:%f, y:%f", threshold, scrollView.contentOffset.y);
 }
 
-- (BOOL)pullDownToRefreshDidEndDragging:(UIScrollView *)scrollView topMargin:(CGFloat)topMargin
+- (BOOL)pullDownToRefreshDidEndDragging:(UIScrollView *)scrollView
 {
     if (kStatus == kCGPullDownToRefreshStatusOveredThreshold) {
         [self setStatus:kCGPullDownToRefreshStatusUpdating];
-        [self animateTableHeaderViewWithDuration:0.15f topMargin:topMargin hidden:NO animated:YES];
+        [self animateTableHeaderViewWithDuration:0.15f hidden:NO animated:YES];
         return TRUE;
     }
     return FALSE;
 }
 
-- (void)pullDownToRefreshDidEndUpdate:(CGFloat)topMargin animated:(BOOL)animated
+- (void)pullDownToRefreshDidEndUpdateWithAnimated:(BOOL)animated
 {
-    [self animateTableHeaderViewWithDuration:0.15f topMargin:topMargin hidden:YES animated:animated];
+    [self animateTableHeaderViewWithDuration:0.15f hidden:YES animated:animated];
 }
 
 @end
