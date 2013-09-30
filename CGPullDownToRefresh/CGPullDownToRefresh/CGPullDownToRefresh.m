@@ -9,7 +9,7 @@
 #import "CGPullDownToRefresh.h"
 
 #define PULLDOWN_MARGIN -2.f
-#define ANIMATE_DURATION 0.15f
+#define ANIMATE_DURATION 0.2f
 
 @implementation CGPullDownToRefresh
 

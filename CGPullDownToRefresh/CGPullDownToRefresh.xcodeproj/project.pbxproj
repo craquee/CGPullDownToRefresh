@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		64E3426F17F9086100C4BCB9 /* CGPullDownToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 64E3426E17F9086100C4BCB9 /* CGPullDownToRefresh.m */; };
+		64E3427117F95FF700C4BCB9 /* heading.png in Resources */ = {isa = PBXBuildFile; fileRef = 64E3427017F95FF700C4BCB9 /* heading.png */; };
 		64F2F3EF17F1A57F00075D07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F2F3EE17F1A57F00075D07 /* Foundation.framework */; };
 		64F2F3FD17F1A57F00075D07 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F2F3FC17F1A57F00075D07 /* XCTest.framework */; };
 		64F2F3FE17F1A57F00075D07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F2F3EE17F1A57F00075D07 /* Foundation.framework */; };
@@ -41,9 +42,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6412488E17F2ED6A003A0643 /* heading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heading.png; sourceTree = "<group>"; };
 		64E3426D17F9086100C4BCB9 /* CGPullDownToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPullDownToRefresh.h; sourceTree = "<group>"; };
 		64E3426E17F9086100C4BCB9 /* CGPullDownToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPullDownToRefresh.m; sourceTree = "<group>"; };
+		64E3427017F95FF700C4BCB9 /* heading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heading.png; sourceTree = "<group>"; };
 		64F2F3EB17F1A57F00075D07 /* libCGPullDownToRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCGPullDownToRefresh.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F2F3EE17F1A57F00075D07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		64F2F3F217F1A57F00075D07 /* CGPullDownToRefresh-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CGPullDownToRefresh-Prefix.pch"; sourceTree = "<group>"; };
@@ -126,7 +127,7 @@
 		64F2F3F117F1A57F00075D07 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6412488E17F2ED6A003A0643 /* heading.png */,
+				64E3427017F95FF700C4BCB9 /* heading.png */,
 				64F2F3F217F1A57F00075D07 /* CGPullDownToRefresh-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -219,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64E3427117F95FF700C4BCB9 /* heading.png in Resources */,
 				64F2F40917F1A57F00075D07 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
