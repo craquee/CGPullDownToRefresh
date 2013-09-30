@@ -14,4 +14,5 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UIActivityIndicatorView *indicatorUpdating;
 @property (unsafe_unretained, nonatomic) IBOutlet UIImageView *imagePullingDown;
 
+- (void)animateHeadingViewWithAnimate:(BOOL)animate isHeadingUp:(BOOL)isHeadingUp hidden:(BOOL)hidden;
 @end

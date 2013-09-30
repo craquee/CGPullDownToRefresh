@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64E3426F17F9086100C4BCB9 /* CGPullDownToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 64E3426E17F9086100C4BCB9 /* CGPullDownToRefresh.m */; };
 		64F2F3EF17F1A57F00075D07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F2F3EE17F1A57F00075D07 /* Foundation.framework */; };
 		64F2F3FD17F1A57F00075D07 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F2F3FC17F1A57F00075D07 /* XCTest.framework */; };
 		64F2F3FE17F1A57F00075D07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F2F3EE17F1A57F00075D07 /* Foundation.framework */; };
@@ -15,7 +16,6 @@
 		64F2F40917F1A57F00075D07 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64F2F40717F1A57F00075D07 /* InfoPlist.strings */; };
 		64F2F40B17F1A57F00075D07 /* CGPullDownToRefreshTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F2F40A17F1A57F00075D07 /* CGPullDownToRefreshTests.m */; };
 		64F2F42217F2816700075D07 /* CGPullDownToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F2F42117F2816700075D07 /* CGPullDownToRefreshView.m */; };
-		64F2F42817F2A76E00075D07 /* UITableView+PullDownToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F2F42717F2A76E00075D07 /* UITableView+PullDownToRefresh.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		6412488E17F2ED6A003A0643 /* heading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heading.png; sourceTree = "<group>"; };
+		64E3426D17F9086100C4BCB9 /* CGPullDownToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPullDownToRefresh.h; sourceTree = "<group>"; };
+		64E3426E17F9086100C4BCB9 /* CGPullDownToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPullDownToRefresh.m; sourceTree = "<group>"; };
 		64F2F3EB17F1A57F00075D07 /* libCGPullDownToRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCGPullDownToRefresh.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F2F3EE17F1A57F00075D07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		64F2F3F217F1A57F00075D07 /* CGPullDownToRefresh-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CGPullDownToRefresh-Prefix.pch"; sourceTree = "<group>"; };
@@ -54,8 +56,6 @@
 		64F2F41F17F2814D00075D07 /* CGPullDownToRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CGPullDownToRefreshView.xib; sourceTree = "<group>"; };
 		64F2F42017F2816700075D07 /* CGPullDownToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPullDownToRefreshView.h; sourceTree = "<group>"; };
 		64F2F42117F2816700075D07 /* CGPullDownToRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPullDownToRefreshView.m; sourceTree = "<group>"; };
-		64F2F42617F2A76E00075D07 /* UITableView+PullDownToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+PullDownToRefresh.h"; sourceTree = "<group>"; };
-		64F2F42717F2A76E00075D07 /* UITableView+PullDownToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+PullDownToRefresh.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,12 +113,12 @@
 		64F2F3F017F1A57F00075D07 /* CGPullDownToRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				64F2F3F117F1A57F00075D07 /* Supporting Files */,
 				64F2F41F17F2814D00075D07 /* CGPullDownToRefreshView.xib */,
 				64F2F42017F2816700075D07 /* CGPullDownToRefreshView.h */,
 				64F2F42117F2816700075D07 /* CGPullDownToRefreshView.m */,
-				64F2F42617F2A76E00075D07 /* UITableView+PullDownToRefresh.h */,
-				64F2F42717F2A76E00075D07 /* UITableView+PullDownToRefresh.m */,
+				64E3426D17F9086100C4BCB9 /* CGPullDownToRefresh.h */,
+				64E3426E17F9086100C4BCB9 /* CGPullDownToRefresh.m */,
+				64F2F3F117F1A57F00075D07 /* Supporting Files */,
 			);
 			path = CGPullDownToRefresh;
 			sourceTree = "<group>";
@@ -231,7 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64F2F42217F2816700075D07 /* CGPullDownToRefreshView.m in Sources */,
-				64F2F42817F2A76E00075D07 /* UITableView+PullDownToRefresh.m in Sources */,
+				64E3426F17F9086100C4BCB9 /* CGPullDownToRefresh.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

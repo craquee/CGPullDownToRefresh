@@ -1,5 +1,5 @@
 PODS:
-  - CGPullDownToRefresh (0.0.1)
+  - CGPullDownToRefresh (0.0.3)
 
 DEPENDENCIES:
   - CGPullDownToRefresh (from `..`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ..
 
 SPEC CHECKSUMS:
-  CGPullDownToRefresh: d53c0e8b66d345386946ea1ee77076b00596145d
+  CGPullDownToRefresh: 21810c227e9ed2a23f909bab47c599fe4ef2fdcc
 
 COCOAPODS: 0.25.0
