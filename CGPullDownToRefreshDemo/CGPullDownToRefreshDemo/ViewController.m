@@ -139,7 +139,7 @@
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             sleep(2);
             dispatch_async(dispatch_get_main_queue(), ^{
-                [_refresh refreshDidUpdateWithAnimated:YES animateDidCompletion:^(BOOL finished, BOOL hidden) {
+                [_refresh refreshDidUpdateWithAnimateDidCompletion:^(BOOL finished, BOOL hidden) {
                     if (hidden) {
                         [_refresh hidden];
                     }

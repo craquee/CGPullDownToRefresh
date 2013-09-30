@@ -32,7 +32,7 @@
 - (void)hidden
 {
     _status = kCGPullDownToRefreshStatusHidden;
-    [self animateTableHeaderViewWithDuration:ANIMATE_DURATION hidden:YES animated:NO animateDidCompletion:nil];
+    [self animateTableHeaderViewWithDuration:ANIMATE_DURATION delay:0.f hidden:YES animated:NO animateDidCompletion:nil];
     [self updateStatus:kCGPullDownToRefreshStatusHidden];
 }
 
@@ -59,15 +59,15 @@
 {
     if (_status == kCGPullDownToRefreshStatusOveredThreshold) {
         [self updateStatus:kCGPullDownToRefreshStatusUpdating];
-        [self animateTableHeaderViewWithDuration:ANIMATE_DURATION hidden:NO animated:YES animateDidCompletion:nil];
+        [self animateTableHeaderViewWithDuration:ANIMATE_DURATION delay:0.f hidden:NO animated:YES animateDidCompletion:nil];
         return TRUE;
     }
     return FALSE;
 }
 
-- (void)refreshDidUpdateWithAnimated:(BOOL)animated animateDidCompletion:(AnimateDidCompletion)animateDidCompletion
+- (void)refreshDidUpdateWithAnimateDidCompletion:(AnimateDidCompletion)animateDidCompletion
 {
-    [self animateTableHeaderViewWithDuration:ANIMATE_DURATION hidden:YES animated:animated animateDidCompletion:animateDidCompletion];
+    [self animateTableHeaderViewWithDuration:ANIMATE_DURATION delay:0.2f hidden:YES animated:YES animateDidCompletion:animateDidCompletion];
 }
 
 #pragma mark - Private
@@ -114,7 +114,7 @@
     _status = status;
 }
 
-- (void)animateTableHeaderViewWithDuration:(CGFloat)duration hidden:(BOOL)hidden animated:(BOOL)animated animateDidCompletion:(AnimateDidCompletion)animateDidCompletion
+- (void)animateTableHeaderViewWithDuration:(CGFloat)duration delay:(CGFloat)delay hidden:(BOOL)hidden animated:(BOOL)animated animateDidCompletion:(AnimateDidCompletion)animateDidCompletion
 {
     CGFloat topOffset = 0.f;
     
@@ -126,7 +126,7 @@
     
     if (animated) {
         [UIView animateWithDuration:duration
-                              delay:0.2f
+                              delay:delay
                             options:UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction
                          animations:^{
                              block_.contentInset = UIEdgeInsetsMake(topOffset, 0.f, 0.f, 0.f);

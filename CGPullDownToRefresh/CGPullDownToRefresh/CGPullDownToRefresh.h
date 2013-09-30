@@ -31,5 +31,5 @@ typedef void (^AnimateDidCompletion)(BOOL finished, BOOL hidden);
 - (void)hidden;
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView;
 - (BOOL)scrollViewDidEndDragging:(UIScrollView *)scrollView;
-- (void)refreshDidUpdateWithAnimated:(BOOL)animated animateDidCompletion:(AnimateDidCompletion)animateDidCompletion;
+- (void)refreshDidUpdateWithAnimateDidCompletion:(AnimateDidCompletion)animateDidCompletion;
 @end
