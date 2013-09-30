@@ -126,6 +126,8 @@
     
     if (animated) {
         [UIView animateWithDuration:duration
+                              delay:0.2f
+                            options:UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction
                          animations:^{
                              block_.contentInset = UIEdgeInsetsMake(topOffset, 0.f, 0.f, 0.f);
                          }
