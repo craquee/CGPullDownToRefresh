@@ -16,6 +16,7 @@ typedef NS_ENUM(NSUInteger, CGPullDownToRefreshStatus) {
     kCGPullDownToRefreshStatusPullingDown,
     kCGPullDownToRefreshStatusOveredThreshold,
     kCGPullDownToRefreshStatusUpdating,
+    kCGPullDownToRefreshStatusDidUpdate,
 };
 
 typedef void (^AnimateDidCompletion)(BOOL finished, BOOL hidden);

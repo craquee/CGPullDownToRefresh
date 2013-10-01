@@ -38,7 +38,8 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if (_status == kCGPullDownToRefreshStatusUpdating) {
+    if (_status == kCGPullDownToRefreshStatusUpdating ||
+        _status == kCGPullDownToRefreshStatusDidUpdate) {
         return;
     }
     
@@ -67,7 +68,8 @@
 
 - (void)refreshDidUpdateWithAnimateDidCompletion:(AnimateDidCompletion)animateDidCompletion
 {
-    [self animateTableHeaderViewWithDuration:ANIMATE_DURATION delay:0.2f hidden:YES animated:YES animateDidCompletion:animateDidCompletion];
+    [self updateStatus:kCGPullDownToRefreshStatusDidUpdate];
+    [self animateTableHeaderViewWithDuration:ANIMATE_DURATION * 2.f delay:0.f hidden:YES animated:YES animateDidCompletion:animateDidCompletion];
 }
 
 #pragma mark - Private
@@ -92,7 +94,7 @@
             break;
             
         case kCGPullDownToRefreshStatusOveredThreshold:
-            [view.labelStatus setText:NSLocalizedString(@"update when release your finger.", @"status overed threshold")];
+            [view.labelStatus setText:NSLocalizedString(@"update when release your finger", @"status overed threshold")];
             [view.indicatorUpdating stopAnimating];
             if (_status == kCGPullDownToRefreshStatusPullingDown) {
                 [view animateHeadingViewWithAnimate:YES isHeadingUp:YES hidden:NO];
@@ -103,6 +105,12 @@
             [view.labelStatus setText:NSLocalizedString(@"updating...", @"status updating")];
             [view.indicatorUpdating startAnimating];
             [view animateHeadingViewWithAnimate:NO isHeadingUp:NO hidden:YES];
+            break;
+            
+        case kCGPullDownToRefreshStatusDidUpdate:
+            [view.labelStatus setText:NSLocalizedString(@"done update!", @"status done update")];
+            [view.indicatorUpdating stopAnimating];
+            [view animateHeadingViewWithAnimate:NO isHeadingUp:NO hidden:NO];
             break;
             
         default:
