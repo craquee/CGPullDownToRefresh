@@ -86,7 +86,7 @@
             break;
             
         case kCRPullDownToRefreshStatusPullingDown:
-            [view.labelStatus setText:NSLocalizedString(@"pulling down...", @"status pulling down")];
+            [view.labelStatus setText:NSLocalizedString(@"Pull down to update", @"status pulling down")];
             [view.indicatorUpdating stopAnimating];
             if (_status != kCRPullDownToRefreshStatusPullingDown) {
                 [view animateHeadingViewWithAnimate:YES isHeadingUp:NO hidden:NO];
@@ -94,7 +94,7 @@
             break;
             
         case kCRPullDownToRefreshStatusOveredThreshold:
-            [view.labelStatus setText:NSLocalizedString(@"update when release your finger", @"status overed threshold")];
+            [view.labelStatus setText:NSLocalizedString(@"Release to update", @"status overed threshold")];
             [view.indicatorUpdating stopAnimating];
             if (_status == kCRPullDownToRefreshStatusPullingDown) {
                 [view animateHeadingViewWithAnimate:YES isHeadingUp:YES hidden:NO];
@@ -102,13 +102,13 @@
             break;
             
         case kCRPullDownToRefreshStatusUpdating:
-            [view.labelStatus setText:NSLocalizedString(@"updating...", @"status updating")];
+            [view.labelStatus setText:NSLocalizedString(@"Updating...", @"status updating")];
             [view.indicatorUpdating startAnimating];
             [view animateHeadingViewWithAnimate:NO isHeadingUp:NO hidden:YES];
             break;
             
         case kCRPullDownToRefreshStatusDidUpdate:
-            [view.labelStatus setText:NSLocalizedString(@"done update!", @"status done update")];
+            [view.labelStatus setText:NSLocalizedString(@"Done update!", @"status done update")];
             [view.indicatorUpdating stopAnimating];
             [view animateHeadingViewWithAnimate:NO isHeadingUp:NO hidden:NO];
             break;

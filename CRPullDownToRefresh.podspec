@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CRPullDownToRefresh"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.summary      = "A short description of CRPullDownToRefresh."
 
   s.description  = <<-DESC
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '5.1'
 
 
-  s.source       = { :git => "git@github.com:craquee/CRPullDownToRefresh.git", :tag => "0.0.8" }
+  s.source       = { :git => "git@github.com:craquee/CRPullDownToRefresh.git", :tag => "0.1.1" }
 
 
   s.source_files  = 'CRPullDownToRefresh/**/*.{h,m}'
