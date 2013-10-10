@@ -1,6 +1,6 @@
 //
-//  CGPullDownToRefresh.h
-//  CGPullDownToRefresh
+//  CRPullDownToRefresh.h
+//  CRPullDownToRefresh
 //
 //  Created by Tomoya Igarashi on 9/30/13.
 //
@@ -9,23 +9,23 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "CGPullDownToRefreshView.h"
+#import "CRPullDownToRefreshView.h"
 
-typedef NS_ENUM(NSUInteger, CGPullDownToRefreshStatus) {
-    kCGPullDownToRefreshStatusHidden = 0,
-    kCGPullDownToRefreshStatusPullingDown,
-    kCGPullDownToRefreshStatusOveredThreshold,
-    kCGPullDownToRefreshStatusUpdating,
-    kCGPullDownToRefreshStatusDidUpdate,
+typedef NS_ENUM(NSUInteger, CRPullDownToRefreshStatus) {
+    kCRPullDownToRefreshStatusHidden = 0,
+    kCRPullDownToRefreshStatusPullingDown,
+    kCRPullDownToRefreshStatusOveredThreshold,
+    kCRPullDownToRefreshStatusUpdating,
+    kCRPullDownToRefreshStatusDidUpdate,
 };
 
 typedef void (^AnimateDidCompletion)(BOOL finished, BOOL hidden);
 
-@interface CGPullDownToRefresh : NSObject
+@interface CRPullDownToRefresh : NSObject
 
 @property (weak, nonatomic) UITableView *tableView;
-@property (strong, nonatomic) CGPullDownToRefreshView *refreshView;
-@property (unsafe_unretained, nonatomic) CGPullDownToRefreshStatus status;
+@property (strong, nonatomic) CRPullDownToRefreshView *refreshView;
+@property (unsafe_unretained, nonatomic) CRPullDownToRefreshStatus status;
 @property (unsafe_unretained, nonatomic) CGFloat pullDownMargin;
 
 - (id)initWithTableView:(UITableView *)tableView pullDownMargin:(CGFloat)pullDownMargin;

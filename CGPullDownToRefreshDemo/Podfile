@@ -1,7 +1,0 @@
-# Uncomment this line to define a global platform for your project
-platform :ios, "5.1"           
-
-xcodeproj 'CGPullDownToRefreshDemo'
-workspace 'CGPullDownToRefreshDemo'
-
-pod 'CGPullDownToRefresh', :path => '..'                                                                                                                                          

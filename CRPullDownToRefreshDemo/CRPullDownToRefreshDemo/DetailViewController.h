@@ -1,6 +1,6 @@
 //
 //  DetailViewController.h
-//  CGPullDownToRefreshDemo
+//  CRPullDownToRefreshDemo
 //
 //  Created by Tomoya Igarashi on 9/24/13.
 //

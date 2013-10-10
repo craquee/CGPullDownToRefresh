@@ -1,28 +1,28 @@
 //
-//  CGPullDownToRefresh.m
-//  CGPullDownToRefresh
+//  CRPullDownToRefresh.m
+//  CRPullDownToRefresh
 //
 //  Created by Tomoya Igarashi on 9/30/13.
 //
 //
 
-#import "CGPullDownToRefresh.h"
+#import "CRPullDownToRefresh.h"
 
 #define PULLDOWN_MARGIN -2.f
 #define ANIMATE_DURATION 0.2f
 
-@implementation CGPullDownToRefresh
+@implementation CRPullDownToRefresh
 
 - (id)initWithTableView:(UITableView *)tableView pullDownMargin:(CGFloat)pullDownMargin
 {
     self = [super init];
     
     if (self) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CGPullDownToRefreshView" owner:nil options:nil];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CRPullDownToRefreshView" owner:nil options:nil];
         _refreshView = [nib objectAtIndex:0];
         tableView.tableHeaderView = _refreshView;
         _tableView = tableView;
-        _status = kCGPullDownToRefreshStatusHidden;
+        _status = kCRPullDownToRefreshStatusHidden;
         _pullDownMargin = pullDownMargin < PULLDOWN_MARGIN ? pullDownMargin : PULLDOWN_MARGIN;
     }
     
@@ -31,35 +31,35 @@
 
 - (void)hidden
 {
-    _status = kCGPullDownToRefreshStatusHidden;
+    _status = kCRPullDownToRefreshStatusHidden;
     [self animateTableHeaderViewWithDuration:ANIMATE_DURATION delay:0.f hidden:YES animated:NO animateDidCompletion:nil];
-    [self updateStatus:kCGPullDownToRefreshStatusHidden];
+    [self updateStatus:kCRPullDownToRefreshStatusHidden];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if (_status == kCGPullDownToRefreshStatusUpdating ||
-        _status == kCGPullDownToRefreshStatusDidUpdate) {
+    if (_status == kCRPullDownToRefreshStatusUpdating ||
+        _status == kCRPullDownToRefreshStatusDidUpdate) {
         return;
     }
     
     CGFloat threshold = self.tableView.tableHeaderView.frame.size.height;
     
     if (scrollView.contentOffset.y < PULLDOWN_MARGIN) {
-        [self updateStatus:kCGPullDownToRefreshStatusOveredThreshold];
+        [self updateStatus:kCRPullDownToRefreshStatusOveredThreshold];
     } else if (scrollView.contentOffset.y >= PULLDOWN_MARGIN &&
                scrollView.contentOffset.y < threshold) {
-        [self updateStatus:kCGPullDownToRefreshStatusPullingDown];
+        [self updateStatus:kCRPullDownToRefreshStatusPullingDown];
     } else {
-        [self updateStatus:kCGPullDownToRefreshStatusHidden];
+        [self updateStatus:kCRPullDownToRefreshStatusHidden];
     }
 //    NSLog(@"t:%f, y:%f", threshold, scrollView.contentOffset.y);
 }
 
 - (BOOL)scrollViewDidEndDragging:(UIScrollView *)scrollView
 {
-    if (_status == kCGPullDownToRefreshStatusOveredThreshold) {
-        [self updateStatus:kCGPullDownToRefreshStatusUpdating];
+    if (_status == kCRPullDownToRefreshStatusOveredThreshold) {
+        [self updateStatus:kCRPullDownToRefreshStatusUpdating];
         [self animateTableHeaderViewWithDuration:ANIMATE_DURATION delay:0.f hidden:NO animated:YES animateDidCompletion:nil];
         return TRUE;
     }
@@ -68,46 +68,46 @@
 
 - (void)refreshDidUpdateWithAnimateDidCompletion:(AnimateDidCompletion)animateDidCompletion
 {
-    [self updateStatus:kCGPullDownToRefreshStatusDidUpdate];
+    [self updateStatus:kCRPullDownToRefreshStatusDidUpdate];
     [self animateTableHeaderViewWithDuration:ANIMATE_DURATION * 2.f delay:0.f hidden:YES animated:YES animateDidCompletion:animateDidCompletion];
 }
 
 #pragma mark - Private
 
-- (void)updateStatus:(CGPullDownToRefreshStatus)status
+- (void)updateStatus:(CRPullDownToRefreshStatus)status
 {
-    CGPullDownToRefreshView *view = (CGPullDownToRefreshView *)self.tableView.tableHeaderView;
+    CRPullDownToRefreshView *view = (CRPullDownToRefreshView *)self.tableView.tableHeaderView;
     
     switch (status) {
-        case kCGPullDownToRefreshStatusHidden:
+        case kCRPullDownToRefreshStatusHidden:
             [view.labelStatus setText:nil];
             [view.indicatorUpdating stopAnimating];
             [view animateHeadingViewWithAnimate:NO isHeadingUp:NO hidden:YES];
             break;
             
-        case kCGPullDownToRefreshStatusPullingDown:
+        case kCRPullDownToRefreshStatusPullingDown:
             [view.labelStatus setText:NSLocalizedString(@"pulling down...", @"status pulling down")];
             [view.indicatorUpdating stopAnimating];
-            if (_status != kCGPullDownToRefreshStatusPullingDown) {
+            if (_status != kCRPullDownToRefreshStatusPullingDown) {
                 [view animateHeadingViewWithAnimate:YES isHeadingUp:NO hidden:NO];
             }
             break;
             
-        case kCGPullDownToRefreshStatusOveredThreshold:
+        case kCRPullDownToRefreshStatusOveredThreshold:
             [view.labelStatus setText:NSLocalizedString(@"update when release your finger", @"status overed threshold")];
             [view.indicatorUpdating stopAnimating];
-            if (_status == kCGPullDownToRefreshStatusPullingDown) {
+            if (_status == kCRPullDownToRefreshStatusPullingDown) {
                 [view animateHeadingViewWithAnimate:YES isHeadingUp:YES hidden:NO];
             }
             break;
             
-        case kCGPullDownToRefreshStatusUpdating:
+        case kCRPullDownToRefreshStatusUpdating:
             [view.labelStatus setText:NSLocalizedString(@"updating...", @"status updating")];
             [view.indicatorUpdating startAnimating];
             [view animateHeadingViewWithAnimate:NO isHeadingUp:NO hidden:YES];
             break;
             
-        case kCGPullDownToRefreshStatusDidUpdate:
+        case kCRPullDownToRefreshStatusDidUpdate:
             [view.labelStatus setText:NSLocalizedString(@"done update!", @"status done update")];
             [view.indicatorUpdating stopAnimating];
             [view animateHeadingViewWithAnimate:NO isHeadingUp:NO hidden:NO];

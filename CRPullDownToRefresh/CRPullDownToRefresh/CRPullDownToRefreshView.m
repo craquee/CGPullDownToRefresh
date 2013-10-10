@@ -1,14 +1,14 @@
 //
-//  CGPullDownToRefreshView.m
-//  CGPullDownToRefresh
+//  CRPullDownToRefreshView.m
+//  CRPullDownToRefresh
 //
 //  Created by Tomoya Igarashi on 9/25/13.
 //
 //
 
-#import "CGPullDownToRefreshView.h"
+#import "CRPullDownToRefreshView.h"
 
-@implementation CGPullDownToRefreshView
+@implementation CRPullDownToRefreshView
 
 - (id)initWithFrame:(CGRect)frame
 {

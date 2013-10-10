@@ -1,6 +1,6 @@
 //
-//  CGPullDownToRefreshTests.m
-//  CGPullDownToRefreshTests
+//  CRPullDownToRefreshDemoTests.m
+//  CRPullDownToRefreshDemoTests
 //
 //  Created by Tomoya Igarashi on 9/24/13.
 //
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface CGPullDownToRefreshTests : XCTestCase
+@interface CRPullDownToRefreshDemoTests : XCTestCase
 
 @end
 
-@implementation CGPullDownToRefreshTests
+@implementation CRPullDownToRefreshDemoTests
 
 - (void)setUp
 {

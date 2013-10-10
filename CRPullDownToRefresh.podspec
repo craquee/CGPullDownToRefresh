@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
 
-  s.name         = "CGPullDownToRefresh"
-  s.version      = "0.0.8"
-  s.summary      = "A short description of CGPullDownToRefresh."
+  s.name         = "CRPullDownToRefresh"
+  s.version      = "0.1.0"
+  s.summary      = "A short description of CRPullDownToRefresh."
 
   s.description  = <<-DESC
-                   A longer description of CGPullDownToRefresh in Markdown format.
+                   A longer description of CRPullDownToRefresh in Markdown format.
 
                    * Think: Why did you write this? What is the focus? What does it do?
                    * CocoaPods will be using this to generate tags, and improve search results.
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
                    * Finally, don't worry about the indent, CocoaPods strips it!
                    DESC
 
-  s.homepage     = "http://EXAMPLE/CGPullDownToRefresh"
+  s.homepage     = "https://github.com/craquee/CRPullDownToRefresh"
   # s.screenshots  = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
 
 
@@ -29,13 +29,13 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '5.1'
 
 
-  s.source       = { :git => "git@github.com:craquee/CGPullDownToRefresh.git", :tag => "0.0.8" }
+  s.source       = { :git => "git@github.com:craquee/CRPullDownToRefresh.git", :tag => "0.0.8" }
 
 
-  s.source_files  = 'CGPullDownToRefresh/**/*.{h,m}'
-  s.exclude_files = 'CGPullDownToRefresh/**/*Tests.{h,m}'
+  s.source_files  = 'CRPullDownToRefresh/**/*.{h,m}'
+  s.exclude_files = 'CRPullDownToRefresh/**/*Tests.{h,m}'
 
-  s.resources = 'CGPullDownToRefresh/**/*.{xib,png}'
+  s.resources = 'CRPullDownToRefresh/**/*.{xib,png}'
 
   # s.framework  = 'SomeFramework'
   # s.frameworks = 'SomeFramework', 'AnotherFramework'

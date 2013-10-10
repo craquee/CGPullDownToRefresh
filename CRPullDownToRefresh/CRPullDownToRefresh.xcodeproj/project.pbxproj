@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		64E3426F17F9086100C4BCB9 /* CGPullDownToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 64E3426E17F9086100C4BCB9 /* CGPullDownToRefresh.m */; };
+		64E3426F17F9086100C4BCB9 /* CRPullDownToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 64E3426E17F9086100C4BCB9 /* CRPullDownToRefresh.m */; };
 		64E3427117F95FF700C4BCB9 /* heading.png in Resources */ = {isa = PBXBuildFile; fileRef = 64E3427017F95FF700C4BCB9 /* heading.png */; };
 		64F2F3EF17F1A57F00075D07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F2F3EE17F1A57F00075D07 /* Foundation.framework */; };
 		64F2F3FD17F1A57F00075D07 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F2F3FC17F1A57F00075D07 /* XCTest.framework */; };
 		64F2F3FE17F1A57F00075D07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F2F3EE17F1A57F00075D07 /* Foundation.framework */; };
 		64F2F40017F1A57F00075D07 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F2F3FF17F1A57F00075D07 /* UIKit.framework */; };
-		64F2F40317F1A57F00075D07 /* libCGPullDownToRefresh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F2F3EB17F1A57F00075D07 /* libCGPullDownToRefresh.a */; };
+		64F2F40317F1A57F00075D07 /* libCRPullDownToRefresh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F2F3EB17F1A57F00075D07 /* libCRPullDownToRefresh.a */; };
 		64F2F40917F1A57F00075D07 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64F2F40717F1A57F00075D07 /* InfoPlist.strings */; };
-		64F2F40B17F1A57F00075D07 /* CGPullDownToRefreshTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F2F40A17F1A57F00075D07 /* CGPullDownToRefreshTests.m */; };
-		64F2F42217F2816700075D07 /* CGPullDownToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F2F42117F2816700075D07 /* CGPullDownToRefreshView.m */; };
+		64F2F40B17F1A57F00075D07 /* CRPullDownToRefreshTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F2F40A17F1A57F00075D07 /* CRPullDownToRefreshTests.m */; };
+		64F2F42217F2816700075D07 /* CRPullDownToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F2F42117F2816700075D07 /* CRPullDownToRefreshView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,7 +25,7 @@
 			containerPortal = 64F2F3E317F1A57F00075D07 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 64F2F3EA17F1A57F00075D07;
-			remoteInfo = CGPullDownToRefresh;
+			remoteInfo = CRPullDownToRefresh;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -42,21 +42,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		64E3426D17F9086100C4BCB9 /* CGPullDownToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPullDownToRefresh.h; sourceTree = "<group>"; };
-		64E3426E17F9086100C4BCB9 /* CGPullDownToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPullDownToRefresh.m; sourceTree = "<group>"; };
+		64E3426D17F9086100C4BCB9 /* CRPullDownToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRPullDownToRefresh.h; sourceTree = "<group>"; };
+		64E3426E17F9086100C4BCB9 /* CRPullDownToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRPullDownToRefresh.m; sourceTree = "<group>"; };
 		64E3427017F95FF700C4BCB9 /* heading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heading.png; sourceTree = "<group>"; };
-		64F2F3EB17F1A57F00075D07 /* libCGPullDownToRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCGPullDownToRefresh.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		64F2F3EB17F1A57F00075D07 /* libCRPullDownToRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCRPullDownToRefresh.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F2F3EE17F1A57F00075D07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		64F2F3F217F1A57F00075D07 /* CGPullDownToRefresh-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CGPullDownToRefresh-Prefix.pch"; sourceTree = "<group>"; };
-		64F2F3FB17F1A57F00075D07 /* CGPullDownToRefreshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CGPullDownToRefreshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		64F2F3F217F1A57F00075D07 /* CRPullDownToRefresh-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CRPullDownToRefresh-Prefix.pch"; sourceTree = "<group>"; };
+		64F2F3FB17F1A57F00075D07 /* CRPullDownToRefreshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CRPullDownToRefreshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F2F3FC17F1A57F00075D07 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		64F2F3FF17F1A57F00075D07 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		64F2F40617F1A57F00075D07 /* CGPullDownToRefreshTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CGPullDownToRefreshTests-Info.plist"; sourceTree = "<group>"; };
+		64F2F3FF17F1A57F00075D07 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		64F2F40617F1A57F00075D07 /* CRPullDownToRefreshTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CRPullDownToRefreshTests-Info.plist"; sourceTree = "<group>"; };
 		64F2F40817F1A57F00075D07 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		64F2F40A17F1A57F00075D07 /* CGPullDownToRefreshTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGPullDownToRefreshTests.m; sourceTree = "<group>"; };
-		64F2F41F17F2814D00075D07 /* CGPullDownToRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CGPullDownToRefreshView.xib; sourceTree = "<group>"; };
-		64F2F42017F2816700075D07 /* CGPullDownToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPullDownToRefreshView.h; sourceTree = "<group>"; };
-		64F2F42117F2816700075D07 /* CGPullDownToRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPullDownToRefreshView.m; sourceTree = "<group>"; };
+		64F2F40A17F1A57F00075D07 /* CRPullDownToRefreshTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRPullDownToRefreshTests.m; sourceTree = "<group>"; };
+		64F2F41F17F2814D00075D07 /* CRPullDownToRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CRPullDownToRefreshView.xib; sourceTree = "<group>"; };
+		64F2F42017F2816700075D07 /* CRPullDownToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRPullDownToRefreshView.h; sourceTree = "<group>"; };
+		64F2F42117F2816700075D07 /* CRPullDownToRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRPullDownToRefreshView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 				64F2F3FD17F1A57F00075D07 /* XCTest.framework in Frameworks */,
 				64F2F40017F1A57F00075D07 /* UIKit.framework in Frameworks */,
 				64F2F3FE17F1A57F00075D07 /* Foundation.framework in Frameworks */,
-				64F2F40317F1A57F00075D07 /* libCGPullDownToRefresh.a in Frameworks */,
+				64F2F40317F1A57F00075D07 /* libCRPullDownToRefresh.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,8 +85,8 @@
 		64F2F3E217F1A57F00075D07 = {
 			isa = PBXGroup;
 			children = (
-				64F2F3F017F1A57F00075D07 /* CGPullDownToRefresh */,
-				64F2F40417F1A57F00075D07 /* CGPullDownToRefreshTests */,
+				64F2F3F017F1A57F00075D07 /* CRPullDownToRefresh */,
+				64F2F40417F1A57F00075D07 /* CRPullDownToRefreshTests */,
 				64F2F3ED17F1A57F00075D07 /* Frameworks */,
 				64F2F3EC17F1A57F00075D07 /* Products */,
 			);
@@ -95,8 +95,8 @@
 		64F2F3EC17F1A57F00075D07 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				64F2F3EB17F1A57F00075D07 /* libCGPullDownToRefresh.a */,
-				64F2F3FB17F1A57F00075D07 /* CGPullDownToRefreshTests.xctest */,
+				64F2F3EB17F1A57F00075D07 /* libCRPullDownToRefresh.a */,
+				64F2F3FB17F1A57F00075D07 /* CRPullDownToRefreshTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,41 +111,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		64F2F3F017F1A57F00075D07 /* CGPullDownToRefresh */ = {
+		64F2F3F017F1A57F00075D07 /* CRPullDownToRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				64F2F41F17F2814D00075D07 /* CGPullDownToRefreshView.xib */,
-				64F2F42017F2816700075D07 /* CGPullDownToRefreshView.h */,
-				64F2F42117F2816700075D07 /* CGPullDownToRefreshView.m */,
-				64E3426D17F9086100C4BCB9 /* CGPullDownToRefresh.h */,
-				64E3426E17F9086100C4BCB9 /* CGPullDownToRefresh.m */,
+				64F2F41F17F2814D00075D07 /* CRPullDownToRefreshView.xib */,
+				64F2F42017F2816700075D07 /* CRPullDownToRefreshView.h */,
+				64F2F42117F2816700075D07 /* CRPullDownToRefreshView.m */,
+				64E3426D17F9086100C4BCB9 /* CRPullDownToRefresh.h */,
+				64E3426E17F9086100C4BCB9 /* CRPullDownToRefresh.m */,
 				64F2F3F117F1A57F00075D07 /* Supporting Files */,
 			);
-			path = CGPullDownToRefresh;
+			path = CRPullDownToRefresh;
 			sourceTree = "<group>";
 		};
 		64F2F3F117F1A57F00075D07 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				64E3427017F95FF700C4BCB9 /* heading.png */,
-				64F2F3F217F1A57F00075D07 /* CGPullDownToRefresh-Prefix.pch */,
+				64F2F3F217F1A57F00075D07 /* CRPullDownToRefresh-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		64F2F40417F1A57F00075D07 /* CGPullDownToRefreshTests */ = {
+		64F2F40417F1A57F00075D07 /* CRPullDownToRefreshTests */ = {
 			isa = PBXGroup;
 			children = (
-				64F2F40A17F1A57F00075D07 /* CGPullDownToRefreshTests.m */,
+				64F2F40A17F1A57F00075D07 /* CRPullDownToRefreshTests.m */,
 				64F2F40517F1A57F00075D07 /* Supporting Files */,
 			);
-			path = CGPullDownToRefreshTests;
+			path = CRPullDownToRefreshTests;
 			sourceTree = "<group>";
 		};
 		64F2F40517F1A57F00075D07 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				64F2F40617F1A57F00075D07 /* CGPullDownToRefreshTests-Info.plist */,
+				64F2F40617F1A57F00075D07 /* CRPullDownToRefreshTests-Info.plist */,
 				64F2F40717F1A57F00075D07 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -154,9 +154,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		64F2F3EA17F1A57F00075D07 /* CGPullDownToRefresh */ = {
+		64F2F3EA17F1A57F00075D07 /* CRPullDownToRefresh */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 64F2F40E17F1A57F00075D07 /* Build configuration list for PBXNativeTarget "CGPullDownToRefresh" */;
+			buildConfigurationList = 64F2F40E17F1A57F00075D07 /* Build configuration list for PBXNativeTarget "CRPullDownToRefresh" */;
 			buildPhases = (
 				64F2F3E717F1A57F00075D07 /* Sources */,
 				64F2F3E817F1A57F00075D07 /* Frameworks */,
@@ -166,14 +166,14 @@
 			);
 			dependencies = (
 			);
-			name = CGPullDownToRefresh;
-			productName = CGPullDownToRefresh;
-			productReference = 64F2F3EB17F1A57F00075D07 /* libCGPullDownToRefresh.a */;
+			name = CRPullDownToRefresh;
+			productName = CRPullDownToRefresh;
+			productReference = 64F2F3EB17F1A57F00075D07 /* libCRPullDownToRefresh.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		64F2F3FA17F1A57F00075D07 /* CGPullDownToRefreshTests */ = {
+		64F2F3FA17F1A57F00075D07 /* CRPullDownToRefreshTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 64F2F41117F1A57F00075D07 /* Build configuration list for PBXNativeTarget "CGPullDownToRefreshTests" */;
+			buildConfigurationList = 64F2F41117F1A57F00075D07 /* Build configuration list for PBXNativeTarget "CRPullDownToRefreshTests" */;
 			buildPhases = (
 				64F2F3F717F1A57F00075D07 /* Sources */,
 				64F2F3F817F1A57F00075D07 /* Frameworks */,
@@ -184,9 +184,9 @@
 			dependencies = (
 				64F2F40217F1A57F00075D07 /* PBXTargetDependency */,
 			);
-			name = CGPullDownToRefreshTests;
+			name = CRPullDownToRefreshTests;
 			productName = CGPullDownToRefreshTests;
-			productReference = 64F2F3FB17F1A57F00075D07 /* CGPullDownToRefreshTests.xctest */;
+			productReference = 64F2F3FB17F1A57F00075D07 /* CRPullDownToRefreshTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -197,7 +197,7 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 			};
-			buildConfigurationList = 64F2F3E617F1A57F00075D07 /* Build configuration list for PBXProject "CGPullDownToRefresh" */;
+			buildConfigurationList = 64F2F3E617F1A57F00075D07 /* Build configuration list for PBXProject "CRPullDownToRefresh" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -209,8 +209,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				64F2F3EA17F1A57F00075D07 /* CGPullDownToRefresh */,
-				64F2F3FA17F1A57F00075D07 /* CGPullDownToRefreshTests */,
+				64F2F3EA17F1A57F00075D07 /* CRPullDownToRefresh */,
+				64F2F3FA17F1A57F00075D07 /* CRPullDownToRefreshTests */,
 			);
 		};
 /* End PBXProject section */
@@ -232,8 +232,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64F2F42217F2816700075D07 /* CGPullDownToRefreshView.m in Sources */,
-				64E3426F17F9086100C4BCB9 /* CGPullDownToRefresh.m in Sources */,
+				64F2F42217F2816700075D07 /* CRPullDownToRefreshView.m in Sources */,
+				64E3426F17F9086100C4BCB9 /* CRPullDownToRefresh.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64F2F40B17F1A57F00075D07 /* CGPullDownToRefreshTests.m in Sources */,
+				64F2F40B17F1A57F00075D07 /* CRPullDownToRefreshTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +250,7 @@
 /* Begin PBXTargetDependency section */
 		64F2F40217F1A57F00075D07 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 64F2F3EA17F1A57F00075D07 /* CGPullDownToRefresh */;
+			target = 64F2F3EA17F1A57F00075D07 /* CRPullDownToRefresh */;
 			targetProxy = 64F2F40117F1A57F00075D07 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -340,11 +340,11 @@
 		64F2F40F17F1A57F00075D07 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/CGPullDownToRefresh.dst;
+				DSTROOT = /tmp/CRPullDownToRefresh.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CGPullDownToRefresh/CGPullDownToRefresh-Prefix.pch";
+				GCC_PREFIX_HEADER = "CRPullDownToRefresh/CRPullDownToRefresh-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CRPullDownToRefresh;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -352,11 +352,11 @@
 		64F2F41017F1A57F00075D07 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/CGPullDownToRefresh.dst;
+				DSTROOT = /tmp/CRPullDownToRefresh.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CGPullDownToRefresh/CGPullDownToRefresh-Prefix.pch";
+				GCC_PREFIX_HEADER = "CRPullDownToRefresh/CRPullDownToRefresh-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CRPullDownToRefresh;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -371,13 +371,13 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CGPullDownToRefresh/CGPullDownToRefresh-Prefix.pch";
+				GCC_PREFIX_HEADER = "CRPullDownToRefresh/CRPullDownToRefresh-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "CGPullDownToRefreshTests/CGPullDownToRefreshTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "CRPullDownToRefreshTests/CRPullDownToRefreshTests-Info.plist";
+				PRODUCT_NAME = CRPullDownToRefreshTests;
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -392,9 +392,9 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CGPullDownToRefresh/CGPullDownToRefresh-Prefix.pch";
-				INFOPLIST_FILE = "CGPullDownToRefreshTests/CGPullDownToRefreshTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "CRPullDownToRefresh/CRPullDownToRefresh-Prefix.pch";
+				INFOPLIST_FILE = "CRPullDownToRefreshTests/CRPullDownToRefreshTests-Info.plist";
+				PRODUCT_NAME = CRPullDownToRefreshTests;
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
@@ -402,7 +402,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		64F2F3E617F1A57F00075D07 /* Build configuration list for PBXProject "CGPullDownToRefresh" */ = {
+		64F2F3E617F1A57F00075D07 /* Build configuration list for PBXProject "CRPullDownToRefresh" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				64F2F40C17F1A57F00075D07 /* Debug */,
@@ -411,7 +411,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		64F2F40E17F1A57F00075D07 /* Build configuration list for PBXNativeTarget "CGPullDownToRefresh" */ = {
+		64F2F40E17F1A57F00075D07 /* Build configuration list for PBXNativeTarget "CRPullDownToRefresh" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				64F2F40F17F1A57F00075D07 /* Debug */,
@@ -420,7 +420,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		64F2F41117F1A57F00075D07 /* Build configuration list for PBXNativeTarget "CGPullDownToRefreshTests" */ = {
+		64F2F41117F1A57F00075D07 /* Build configuration list for PBXNativeTarget "CRPullDownToRefreshTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				64F2F41217F1A57F00075D07 /* Debug */,

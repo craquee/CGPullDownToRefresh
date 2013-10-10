@@ -1,19 +1,19 @@
 //
 //  ViewController.m
-//  CGPullDownToRefreshDemo
+//  CRPullDownToRefreshDemo
 //
 //  Created by Tomoya Igarashi on 9/27/13.
 //
 //
 
 #import "ViewController.h"
-#import <CGPullDownToRefresh/CGPullDownToRefresh.h>
+#import <CRPullDownToRefresh/CRPullDownToRefresh.h>
 #import "DetailViewController.h"
 
 @interface ViewController () {
     NSMutableArray *_objects;
-    CGPullDownToRefreshStatus _refreshStatus;
-    CGPullDownToRefresh *_refresh;
+    CRPullDownToRefreshStatus _refreshStatus;
+    CRPullDownToRefresh *_refresh;
 }
 @end
 
@@ -41,7 +41,7 @@
     self.navigationItem.rightBarButtonItem = addButton;
     
     if (_refresh == nil) {
-        _refresh = [[CGPullDownToRefresh alloc] initWithTableView:self.tableView pullDownMargin:PULLDOWN_MARGIN];
+        _refresh = [[CRPullDownToRefresh alloc] initWithTableView:self.tableView pullDownMargin:PULLDOWN_MARGIN];
     }
 }
 

@@ -1,0 +1,14 @@
+PODS:
+  - CRPullDownToRefresh (0.1.0)
+
+DEPENDENCIES:
+  - CRPullDownToRefresh (from `..`)
+
+EXTERNAL SOURCES:
+  CRPullDownToRefresh:
+    :path: ..
+
+SPEC CHECKSUMS:
+  CRPullDownToRefresh: db2f2b74ad6e118377a519b020d390dcce84c522
+
+COCOAPODS: 0.25.0

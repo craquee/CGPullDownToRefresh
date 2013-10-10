@@ -1,6 +1,6 @@
 //
-//  CGPullDownToRefreshView.h
-//  CGPullDownToRefresh
+//  CRPullDownToRefreshView.h
+//  CRPullDownToRefresh
 //
 //  Created by Tomoya Igarashi on 9/25/13.
 //
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CGPullDownToRefreshView : UIView
+@interface CRPullDownToRefreshView : UIView
 
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *labelStatus;
 @property (unsafe_unretained, nonatomic) IBOutlet UIActivityIndicatorView *indicatorUpdating;
