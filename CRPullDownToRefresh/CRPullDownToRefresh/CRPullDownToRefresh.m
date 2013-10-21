@@ -108,7 +108,6 @@
             break;
             
         case kCRPullDownToRefreshStatusDidUpdate:
-            [view.labelStatus setText:NSLocalizedString(@"Done update!", @"status done update")];
             [view.indicatorUpdating stopAnimating];
             [view animateHeadingViewWithAnimate:NO isHeadingUp:NO hidden:NO];
             break;
