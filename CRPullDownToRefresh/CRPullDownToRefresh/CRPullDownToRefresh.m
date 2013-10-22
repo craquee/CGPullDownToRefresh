@@ -124,10 +124,18 @@
 - (void)animateTableHeaderViewWithDuration:(CGFloat)duration delay:(CGFloat)delay hidden:(BOOL)hidden animated:(BOOL)animated animateDidCompletion:(AnimateDidCompletion)animateDidCompletion
 {
     CGFloat topOffset = 0.f;
-    
     if (hidden) {
-        topOffset = -self.tableView.tableHeaderView.frame.size.height;
+        topOffset = -CGRectGetHeight(self.tableView.tableHeaderView.frame);
     }
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(topOffset,
+                                                  self.tableView.contentInset.left,
+                                                  self.tableView.contentInset.bottom,
+                                                  self.tableView.contentInset.right);
+    UIEdgeInsets scrollIndicatorInsets = UIEdgeInsetsMake(self.tableView.contentInset.top,
+                                                          contentInsets.left,
+                                                          contentInsets.bottom,
+                                                          contentInsets.right);
     
     __block UITableView *block_ = self.tableView;
     
@@ -136,7 +144,8 @@
                               delay:delay
                             options:UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction
                          animations:^{
-                             block_.contentInset = UIEdgeInsetsMake(topOffset, 0.f, 0.f, 0.f);
+                             block_.contentInset = contentInsets;
+                             block_.scrollIndicatorInsets = scrollIndicatorInsets;
                          }
                          completion:^(BOOL finished) {
                              if (animateDidCompletion) {
@@ -144,7 +153,8 @@
                              }
                          }];
     } else {
-        self.tableView.contentInset = UIEdgeInsetsMake(topOffset, 0.f, 0.f, 0.f);
+        self.tableView.contentInset = contentInsets;
+        self.tableView.scrollIndicatorInsets = scrollIndicatorInsets;
     }
 }
 
