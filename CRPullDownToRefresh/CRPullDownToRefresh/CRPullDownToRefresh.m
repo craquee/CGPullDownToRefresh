@@ -132,7 +132,7 @@
                                                   self.tableView.contentInset.left,
                                                   self.tableView.contentInset.bottom,
                                                   self.tableView.contentInset.right);
-    UIEdgeInsets scrollIndicatorInsets = UIEdgeInsetsMake(self.tableView.contentInset.top,
+    UIEdgeInsets scrollIndicatorInsets = UIEdgeInsetsMake(self.tableView.scrollIndicatorInsets.top,
                                                           contentInsets.left,
                                                           contentInsets.bottom,
                                                           contentInsets.right);
