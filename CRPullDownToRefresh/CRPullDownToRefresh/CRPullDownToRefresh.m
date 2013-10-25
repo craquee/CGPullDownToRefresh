@@ -43,7 +43,7 @@
         return;
     }
     
-    CGFloat threshold = self.tableView.tableHeaderView.frame.size.height;
+    CGFloat threshold = CGRectGetHeight(self.tableView.tableHeaderView.frame);
     
     if (scrollView.contentOffset.y < PULLDOWN_MARGIN) {
         [self updateStatus:kCRPullDownToRefreshStatusOveredThreshold];
@@ -53,7 +53,6 @@
     } else {
         [self updateStatus:kCRPullDownToRefreshStatusHidden];
     }
-//    NSLog(@"t:%f, y:%f", threshold, scrollView.contentOffset.y);
 }
 
 - (BOOL)scrollViewDidEndDragging:(UIScrollView *)scrollView
