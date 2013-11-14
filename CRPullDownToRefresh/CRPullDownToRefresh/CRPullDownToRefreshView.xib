@@ -19,11 +19,11 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="gdP-N1-jDu">
-                    <rect key="frame" x="32" y="22" width="20" height="20"/>
+                    <rect key="frame" x="60" y="22" width="20" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heading.png" id="N9n-Ea-oPd">
-                    <rect key="frame" x="34" y="24" width="16" height="16"/>
+                    <rect key="frame" x="62" y="24" width="16" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>
